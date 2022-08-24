@@ -136,11 +136,9 @@ class AAA extends React.Component {
 }
 ```
 
+![](https://img-blog.csdnimg.cn/d2689efa28ab478b9d7c1ecf75e2ee1d.png)
 
-
-![](C:%5CUsers%5Conresize%5CPictures%5CmakeDown%5Cimages%5Cimage-20220123223528238.png)
-
-![image-20220123223928681](C:%5CUsers%5Conresize%5CPictures%5CmakeDown%5Cimages%5Cimage-20220123223928681.png)
+![image-20220123223928681](https://img-blog.csdnimg.cn/087da0149321454793d3cb042df75632.png)
 
 ### 组件中的 state 和 setState
 
@@ -157,7 +155,7 @@ class Hello extends React.Component {
 }
 ```
 
-![image-20220123225100105](C:%5CUsers%5Conresize%5CPictures%5CmakeDown%5Cimages%5Cimage-20220123225100105.png)
+![image-20220123225100105](https://img-blog.csdnimg.cn/087da0149321454793d3cb042df75632.png)
 
 ### 组件传值三种方式：
 
@@ -167,23 +165,21 @@ class Hello extends React.Component {
 
 Context解决组件多层嵌套之间的通信
 
-![image-20220204115434178](C:%5CUsers%5Conresize%5CPictures%5CmakeDown%5Cimages%5Cimage-20220204115434178.png)
+![image-20220204115434178](https://img-blog.csdnimg.cn/98ae6ab78c1e4fddbdf5a709feb2450b.png)
 
-![image-20220204120022401](C:%5CUsers%5Conresize%5CPictures%5CmakeDown%5Cimages%5Cimage-20220204120022401-1653723973643.png)
+![image-20220204120022401](https://img-blog.csdnimg.cn/ca19327e19324523adece1dcaef9ecb9.png)
 
-![image-20220204210405274](C:%5CUsers%5Conresize%5CPictures%5CmakeDown%5Cimages%5Cimage-20220204120022401.png)
+![image-20220204212656484](https://img-blog.csdnimg.cn/9cf1b93c1f1a465ca1c896cd905bfe9f.png)
 
-![image-20220204212656484](C:%5CUsers%5Conresize%5CPictures%5CmakeDown%5Cimages%5Cimage-20220204212656484.png)
+![image-20220204213540978](https://img-blog.csdnimg.cn/eab06b9d26cb4c4a94ed83e09e91fed1.png)
 
-![image-20220204213540978](C:%5CUsers%5Conresize%5CPictures%5CmakeDown%5Cimages%5Cimage-20220204213540978.png)
-
-![image-20220204214058557](C:%5CUsers%5Conresize%5CPictures%5CmakeDown%5Cimages%5Cimage-20220204214058557.png)
+![image-20220204214058557](https://img-blog.csdnimg.cn/c21241c851ba473baf5875b70dad151d.png)
 
  
 
 ### 类组件中生命周期
 
-![](C:%5CUsers%5Conresize%5CPictures%5CmakeDown%5Cimages%5Creact%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.jpg)
+![](https://img-blog.csdnimg.cn/75e6c4bf990f4349a6b20faeeae80f20.jpeg)
 
 路由 v6 和 v5 占位符分别写法
 
@@ -259,7 +255,7 @@ const data = useContext(Context)
 ### useReducer	
 
 ```js
-
+类似redux的一个管理状态的hook
 ```
 
 ###  useMemo、useCallback、memo
@@ -267,9 +263,18 @@ const data = useContext(Context)
 ```js
 // 三个都是优化性能的、做缓存
 useMemo 缓存的是函数的返回值
-useCallback 缓存的是函数、和 useMemo使用方法一样
+useCallback 缓存的是函数、和 useMemo使用方法一样 
+useMemo(() => () => {}, [])
+useCallback(() => {}, [])
 
-memo 包裹子组件、实现父组件更新、不会重新渲染子组件、从而节约性能（不推荐在子组件要操作父组件数据的时候使用）
+# memo使用场景：
+包裹当缓存的子组件不需要操作父组件的数据的情况、静态的、（父组件更新自己的数据不会重复渲染子组件）
+
+# useCallback使用场景：
+搭配memo包裹子组件、子组件触发的回调函数、父组件用useCallback对函数进行缓存、防止子组件的重复渲染（子组件更新父组件的数据不会重复渲染子组件）
+
+# useMemo使用场景：
+和useCallback用法一致、搭配memo使用、useMemo缓存的是函数的返回值、防止子组件的重复渲染
 ```
 
 
