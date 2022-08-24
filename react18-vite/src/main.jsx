@@ -6,6 +6,7 @@ import store from './store'
 import App from './compontes/App3'
 
 import 'antd/dist/antd.css';
+import './index.css'
 import 'virtual:windi.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -114,6 +114,7 @@
 .previewPic {
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 
 .previewPic .my_img_one {

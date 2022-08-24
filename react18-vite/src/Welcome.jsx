@@ -1,8 +1,10 @@
 import React from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom'
-import { Layout, Menu, Card, Image } from 'antd';
-import './assets/css/Welcome.css';
+import { Layout, Menu, Card } from 'antd';
+// 图片预览插件: npm install @hanyk/rc-viewer
+import RcViewer from '@hanyk/rc-viewer'
 
+import './assets/css/Welcome.css';
 const { Content, Sider } = Layout;
 
 const RouterList = [
@@ -26,10 +28,32 @@ const RouterList = [
   'useReducerCom',
   'useCallbackCom',
   'FullPageUse',
+  'ahooksUse'
 ]
 
 // 路由为'/'的默认组件
 const InfoPage = () => {
+  const options = {
+    // 是否显示下面工具栏 1 显示 0 隐藏
+    toolbar: 1,
+    navbar: false,       //关闭缩略图
+    fullscreen: false,   //播放全屏
+    loop: false,         //是否循环 上一个 下一个
+    minWidth: '',
+    minHeight: '',
+    toolbar: {
+      zoomIn: { size: 'large' },  //放大
+      zoomOut: { size: 'large' }, //缩小
+      reset: { size: 'large' },   //重置
+      prev: { show: true, size: 'large', }, //上一张
+      play: { show: false, size: 'large', },  //播放
+      next: { show: true, size: 'large', },  //下一张
+      rotateLeft: { size: 'large' },  //左旋转
+      rotateRight: { size: 'large' }, //右旋转
+      flipHorizontal: { size: 'large' },  //左右翻转
+      flipVertical: { size: 'large' },    //上下翻转
+    }
+  }
   return (
     <>
       <div className="text_box">
@@ -46,16 +70,22 @@ const InfoPage = () => {
           </div>
         </div>
       </div>
-      <div className="previewPic">
-        <picture>
-          <source srcSet="https://files.getquicker.net/_sitefiles/_guides/52593d69-c99a-4367-8b98-08d9a65be47e/2021/12/04/205023_202824_s.jpg" alt="缩" />
-          <Image className='my_img_one' src="https://files.getquicker.net/_sitefiles/_guides/52593d69-c99a-4367-8b98-08d9a65be47e/2021/12/04/205133_202824_b.jpg" alt="原" />
-        </picture>
-        <picture>
-          <source srcSet="https://files.getquicker.net/_sitefiles/_guides/52593d69-c99a-4367-8b98-08d9a65be47e/2021/12/04/205316_202824_s.jpg" alt="缩" />
-          <Image className='my_img_one' src="https://files.getquicker.net/_sitefiles/_guides/52593d69-c99a-4367-8b98-08d9a65be47e/2021/12/04/205327_202824_b.jpg" alt="原" />
-        </picture>
-        <Image className='my_img_one' src="https://assets.madewith.cn/storage/0/images/react/react-helmet-react-helmet.jpg" alt="原" />
+      <div className="previewPic cursor-pointer">
+        <RcViewer options={options}>
+          <picture>
+            <source srcSet="https://files.getquicker.net/_sitefiles/_guides/52593d69-c99a-4367-8b98-08d9a65be47e/2021/12/04/205023_202824_s.jpg" alt="缩" />
+            <img className='my_img_one' src="https://files.getquicker.net/_sitefiles/_guides/52593d69-c99a-4367-8b98-08d9a65be47e/2021/12/04/205133_202824_b.jpg" alt="原" />
+          </picture>
+        </RcViewer>
+        <RcViewer options={options}>
+          <picture>
+            <source srcSet="https://files.getquicker.net/_sitefiles/_guides/52593d69-c99a-4367-8b98-08d9a65be47e/2021/12/04/205316_202824_s.jpg" alt="缩" />
+            <img className='my_img_one' src="https://files.getquicker.net/_sitefiles/_guides/52593d69-c99a-4367-8b98-08d9a65be47e/2021/12/04/205327_202824_b.jpg" alt="原" />
+          </picture>
+        </RcViewer>
+        <RcViewer options={options}>
+          <img className='my_img_one' src="https://assets.madewith.cn/storage/0/images/react/react-helmet-react-helmet.jpg" alt="原" />
+        </RcViewer>
         <iframe src="./UpDown.html" frameBorder="0" scrolling="no"></iframe>
 
         {/*XXX 扑克正反面 */}

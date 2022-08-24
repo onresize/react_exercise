@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from 'antd'
 
 function AsyncStateUse() {
   const [show, setShow] = useState(false)
@@ -18,7 +19,7 @@ function AsyncStateUse() {
       <h2>
         结论： useState Hook的第二个参数setState执行第一次是同步的、第二次之后都是异步的
       </h2>
-      <button onClick={() => handleChange(show)}>测试</button>
+      <Button onClick={() => handleChange(show)}>测试</Button>
     </>
   );
 }

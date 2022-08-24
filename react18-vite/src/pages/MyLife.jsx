@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { Button } from 'antd'
+
 
 export default class MyLife extends Component {
 
@@ -24,8 +26,8 @@ export default class MyLife extends Component {
     return (
       <>
         <h2>演示类组件下的生命周期num： {this.state.num}</h2>
-        <button onClick={() => this.setState({ num: this.state.num + 1 })}>累加触发更新</button>
-        <button><Link to="/home">跳转触发销毁</Link></button>
+        <Button onClick={() => this.setState({ num: this.state.num + 1 })}>累加触发更新</Button>
+        <Button><Link to="/home">跳转触发销毁</Link></Button>
       </>
     )
   }

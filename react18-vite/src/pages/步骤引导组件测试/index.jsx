@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'antd'
 import { useTour } from '@reactour/tour'
 // import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import steps from "./steps";
@@ -11,10 +12,10 @@ export default function MyTour() {
 
   return (
     <>
-      <p className="first-step">
+      <h2 className="first-step">
         FIXEME: 待实现
-      </p>
-      <button onClick={() => setIsOpen(true)}>Open Tour</button>
+      </h2>
+      <Button onClick={() => setIsOpen(true)}>Open Tour</Button>
     </>
   )
 }

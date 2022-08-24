@@ -18,11 +18,13 @@ function RenderSvg() {
         React中两种方式渲染svg （生成波浪svg：https://svgwave.in/）
       </h2>
 
-      <Icon component={mySvg} style={{ transform: 'translateY(50px)' }}></Icon>
+      <div className="flex justify-around">
+        <Icon component={mySvg}></Icon>
+        <img src={PicSvg} alt="" style={{ width: '300px', userSelect: 'none', '-webkit-user-drag': 'none' }} />
+        <img src={WavesSvg} alt="" style={{ width: '300px', userSelect: 'none', '-webkit-user-drag': 'none' }} />
+      </div>
 
-      <img src={PicSvg} alt="" style={{ width: '300px', userSelect: 'none','-webkit-user-drag' :'none' }} />
-      <img src={WavesSvg} alt="" style={{ width: '300px', userSelect: 'none','-webkit-user-drag' :'none' }} />
-      <img src={MoveWavesSvg} alt="" style={{ position: 'relative', bottom: 0, userSelect: 'none','-webkit-user-drag' :'none' }} />
+      <img src={MoveWavesSvg} alt="" style={{ position: 'relative', bottom: 0, userSelect: 'none', '-webkit-user-drag': 'none' }} />
 
     </>
   );

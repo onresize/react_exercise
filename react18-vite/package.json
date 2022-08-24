@@ -8,7 +8,10 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@hanyk/rc-viewer": "^0.0.3",
+    "mockjs": "^1.1.0"
+  },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
     "@fullpage/react-fullpage": "^0.1.27",

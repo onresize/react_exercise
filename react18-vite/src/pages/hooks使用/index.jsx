@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Button, Input } from 'antd'
 import { useWindowScroll } from '../../hooks/useWindowScroll'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 
@@ -39,8 +40,10 @@ function HooksUse() {
           <h3>
             测试useState回调传参： {age}
           </h3>
-          <input ref={iptRef} type="text" />
-          <button onClick={() => iptRef.current.focus()}>useRef操作Dom聚焦ipt</button>
+          <div className="flex justify-center">
+            <Input ref={iptRef} type="text" className="mr-1"/>
+            <Button onClick={() => iptRef.current.focus()}>useRef操作Dom聚焦ipt</Button>
+          </div>
         </div>
       </div>
     </>

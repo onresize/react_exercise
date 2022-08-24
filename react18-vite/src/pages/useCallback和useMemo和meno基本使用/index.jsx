@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Image, Anchor } from 'antd';
+import { Button, Anchor } from 'antd';
+import RcViewer from '@hanyk/rc-viewer'
 import pImg from '../../assets/memo.jpg'
 
 import MemoCom from './memo'
@@ -9,6 +10,27 @@ import UseCallbackCom from './useCallback'
 const { Link } = Anchor;
 
 export default function App() {
+  const options = {
+    // 是否显示下面工具栏 1 显示 0 隐藏
+    toolbar: 1,
+    navbar: false,       //关闭缩略图
+    fullscreen: false,   //播放全屏
+    loop: false,         //是否循环 上一个 下一个
+    minWidth: '',
+    minHeight: '',
+    toolbar: {
+      zoomIn: { size: 'large' },  //放大
+      zoomOut: { size: 'large' }, //缩小
+      reset: { size: 'large' },   //重置
+      prev: { show: true, size: 'large', }, //上一张
+      play: { show: false, size: 'large', },  //播放
+      next: { show: true, size: 'large', },  //下一张
+      rotateLeft: { size: 'large' },  //左旋转
+      rotateRight: { size: 'large' }, //右旋转
+      flipHorizontal: { size: 'large' },  //左右翻转
+      flipVertical: { size: 'large' },    //上下翻转
+    }
+  }
   return (
     <>
       <h2>
@@ -21,7 +43,10 @@ export default function App() {
       <MemoCom></MemoCom>
       <UseMemoCom></UseMemoCom>
       <UseCallbackCom></UseCallbackCom>
-      <Image className='my_img1' src={pImg} alt="原" />
+
+      <RcViewer options={options} className="mt-2">
+        <img className='my_img1 cursor-pointer border-4 border-dashed border-yellow-500 rounded-xl' src={pImg} alt="原" />
+      </RcViewer>
     </>
   )
 }

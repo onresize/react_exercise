@@ -10,7 +10,7 @@ export default function UseMemoCom() {
     return () => setN(i => i + 2)
   }, [])
   return (
-    <div style={{ border: '4px solid #339933', padding: '5px', marginTop: '5px' }}>
+    <div style={{ border: '4px solid #339933', padding: '15px', marginTop: '10px' }}>
       <h2><span style={{ backgroundColor: '#339933', width: 'fit-Content', borderRadius: '10px' }}>useMemo使用场景：</span> <b>和useCallback用法一致、搭配memo使用、useMemo缓存的是函数的返回值、防止子组件的重复渲染</b></h2>
       <h2>n: {n}</h2>
       {/*XXX 子组件如果加了没被缓存的props、就是无效优化、还是会重复渲染 */}
