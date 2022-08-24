@@ -1,0 +1,128 @@
+.sidebar::-webkit-scrollbar {
+  background-color: #ffffff;
+}
+.sidebar::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+}
+.activeBtn {
+  background-color: #ffcc99;
+  cursor: pointer;
+  width: 210px;
+  height: 30px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.infoBtn {
+  background-color: #e6f7ff;
+  cursor: pointer;
+  width: 210px;
+  height: 30px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.activeColor {
+  color: #fff;
+}
+.infoColor {
+  color: #000;
+}
+.text_add_box {
+  display: flex;
+  align-items: center;
+}
+.text_add_box .text_add {
+  user-select: none;
+  font-size: 50px;
+  zoom: 1.3;
+  color: #ccc;
+}
+.container {
+  /* background-color: #3b2d2d; */
+}
+
+.text_box {
+  width: 100%;
+  height: 100%;
+}
+.text_box .text_title {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  zoom: 2.5;
+  user-select: none;
+  text-shadow: 5px 5px 5px #e5a2b1;
+}
+.text_box .text_img {
+  display: flex;
+  justify-content: center;
+}
+.text_box .text_img .img_box {
+  user-select: none;
+  margin: 100px;
+}
+.img_box:hover .App-logo {
+  transform: scale(1.3);
+  transition: all 2s;
+  cursor: wait;
+  animation: App-logo-spin infinite 1s linear;
+}
+.img_box:hover .App-logo1 {
+  transform: scale(1.3);
+  transition: all 2s;
+  cursor: wait;
+  animation: App-logo1-spin infinite 1s linear;
+}
+.App-logo {
+  height: 30vmin;
+  pointer-events: none;
+}
+.App-logo1 {
+  height: 30vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 13s linear;
+  }
+  .App-logo1 {
+    animation: App-logo1-spin infinite 13s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes App-logo1-spin {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.previewPic {
+  display: flex;
+  justify-content: center;
+}
+
+.previewPic .my_img_one {
+  box-shadow: 0px 0px 1px 2px rgb(23 162 184 / 20%);
+  padding: 5px;
+  border-radius: 2% !important;
+  height: 200px;
+  width: 300px;
+  margin: 5px;
+  object-fit: cover;
+  user-select: none;
+}

@@ -1,0 +1,121 @@
+#fp-nav ul {
+  display: none; // 隐藏右边小圆点
+}
+.fp-watermark a {
+  display: none !important; // 隐藏最后一页链接
+}
+
+video::-webkit-media-controls-fullscreen-button {
+  display: none;
+}
+/* 播放按钮 */
+video::-webkit-media-controls-play-button {
+  display: none;
+}
+/* 进度条 */
+video::-webkit-media-controls-timeline {
+  display: none;
+}
+/* 观看的当前时间 */
+video::-webkit-media-controls-current-time-display {
+  display: none;
+}
+/* 剩余时间 */
+video::-webkit-media-controls-time-remaining-display {
+  display: none;
+}
+/* 音量按钮 */
+video::-webkit-media-controls-mute-button {
+  display: none;
+}
+video::-webkit-media-controls-toggle-closed-captions-button {
+  display: none;
+}
+/* 音量的控制条 */
+video::-webkit-media-controls-volume-slider {
+  display: none;
+}
+// 禁用hover显示控件
+video:hover::-webkit-media-controls-enclosure {
+  display: none !important;
+  position: absolute !important;
+}
+
+.flexBox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.containerBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.selectBox {
+  position: absolute;
+  top: 70%;
+  left: calc(50% - 180px);
+}
+
+.selectAll {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  width: 400px;
+  padding-left: 26px;
+  box-sizing: border-box;
+
+  .radio {
+    zoom: 3;
+  }
+  .selectRadio1 {
+    .ant-radio-inner {
+      background-color: #f9f4f0 !important;
+    }
+  }
+  .selectRadio2 {
+    .ant-radio-inner {
+      background-color: #1f5c79 !important;
+    }
+  }
+  .selectRadio3 {
+    .ant-radio-inner {
+      background-color: #fae1dc !important;
+    }
+  }
+  .selectRadio4 {
+    .ant-radio-inner {
+      background-color: #344533 !important;
+    }
+  }
+  .selectRadio5 {
+    .ant-radio-inner {
+      background-color: #960210 !important;
+    }
+  }
+
+  .selectRadio1 .ant-radio-inner::after {
+    background-color: #f9f4f0 !important;
+  }
+  .selectRadio2 .ant-radio-inner::after {
+    background-color: #1f5c79 !important;
+  }
+  .selectRadio3 .ant-radio-inner::after {
+    background-color: #fae1dc !important;
+  }
+  .selectRadio4 .ant-radio-inner::after {
+    background-color: #344533 !important;
+  }
+  .selectRadio5 .ant-radio-inner::after {
+    background-color: #960210 !important;
+  }
+}
