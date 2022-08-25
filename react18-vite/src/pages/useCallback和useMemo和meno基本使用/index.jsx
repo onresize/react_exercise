@@ -39,7 +39,7 @@ export default function App() {
           <a href="https://juejin.cn/post/6897038904914870286" target="_blank">掘金参考</a>
         </Anchor>
       </h2>
-      <h2>useCallback 和 useMemo(相比之下回调函数里又return了一个回调函数)使用语法一致、第一个参数是回调函数、第二个参数是数组依赖（依赖变化时才会重新计算函数）</h2>
+      <h2>useCallback 和 useMemo(useMemo相比之下回调函数里又return了一个回调函数)使用语法一致、第一个参数是回调函数、第二个参数是数组依赖（依赖变化时才会重新计算函数）</h2>
       <MemoCom></MemoCom>
       <UseMemoCom></UseMemoCom>
       <UseCallbackCom></UseCallbackCom>

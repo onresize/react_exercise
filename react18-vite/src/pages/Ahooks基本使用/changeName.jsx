@@ -14,7 +14,6 @@ let Pname = '' // 暂存name值
 
 export default () => {
   const [name, setName] = useState('张三')
-  // let [Pname] = useState('')
   const { loading, run } = useRequest(changeUserName, {
     manual: true, // 手动触发
     onSuccess: ({ success }, params) => {

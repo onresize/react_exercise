@@ -28,6 +28,7 @@ const UseReducerCom = lazy(() => import('../pages/useReducer基本使用/index')
 const UseCallbackCom = lazy(() => import('../pages/useCallback和useMemo和meno基本使用/index'))
 const FullPageUse = lazy(() => import('../pages/fullpageJS使用/index'))
 const AhooksUse = lazy(() => import('../pages/Ahooks基本使用/index'))
+const HocWaterMarkCom = lazy(() => import('../pages/封装一个水印组件/index'))
 
 const BaseRouter = () => (
   <BrowserRouter>
@@ -70,6 +71,7 @@ const BaseRouter = () => (
           <Route path="/useCallbackCom" element={<UseCallbackCom />}></Route>
           <Route path="/fullPageUse" element={<FullPageUse />}></Route>
           <Route path="/ahooksUse" element={<AhooksUse />}></Route>
+          <Route path="/hocWaterMarkCom" element={<HocWaterMarkCom />}></Route>
         </Route>
         <Route path="*" element={<Error />}></Route>
       </Routes>

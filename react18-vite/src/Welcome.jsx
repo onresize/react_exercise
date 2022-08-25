@@ -28,7 +28,8 @@ const RouterList = [
   'useReducerCom',
   'useCallbackCom',
   'FullPageUse',
-  'ahooksUse'
+  'ahooksUse',
+  'hocWaterMarkCom'
 ]
 
 // 路由为'/'的默认组件
@@ -155,7 +156,12 @@ function Welcome() {
               backgroundColor: pathname === '/makeIdeas' && '#282C34'
             }}
           >
-            <Card style={{ height: '100%', backgroundColor: pathname === '/makeIdeas' && '#282C34' }}>
+            <Card
+              style={{
+                height: '100%',
+                backgroundColor: pathname === '/makeIdeas' && '#282C34'
+              }}
+              className={(pathname === '/hocWaterMarkCom') && 'rounded-2xl bg-[#000000]'}>
               {pathname === '/' && <InfoPage />}
               <Outlet></Outlet>
             </Card>

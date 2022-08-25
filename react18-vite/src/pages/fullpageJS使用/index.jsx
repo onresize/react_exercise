@@ -3,7 +3,8 @@ import ReactFullpage from '@fullpage/react-fullpage';
 import { Radio } from 'antd';
 //安装动画： yarn add react-transition-group
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import './index.css'
+import './index.module.css'
+import './comm.css'
 
 export default function FullPageJsCom() {
   const [pic, setPic] = useState('https://www.apple.com.cn/iphone-13/images/key-features/hero/hero_starlight__tjp0q09a16i6_large.jpg')
