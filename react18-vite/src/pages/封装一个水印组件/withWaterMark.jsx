@@ -2,6 +2,7 @@ import React from 'react';
 
 
 const SvgTextBg = (props) => {
+  console.log('SvgTextBg组件_____________')
   const { text = '殷志伟牛逼', fontSize = 16, fillOpacity = '0.4', fillColor = 'grey' } = props
   const res = `
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180px" height="180px" viewBox="0 0 180 180">
@@ -10,11 +11,11 @@ const SvgTextBg = (props) => {
 
   const blob = new Blob([res], { type: 'image/svg+xml', })
   const url = URL.createObjectURL(blob)
-  console.log('拿到svg--', url)
 
   return (
     <>
       <div
+        id="__wm"
         style={{
           position: 'absolute',
           top: '50%',
@@ -31,8 +32,10 @@ const SvgTextBg = (props) => {
   )
 }
 
+
+
 //XXX 这里注意因为 高阶组件内部要 return一个组件、再在内部组件里面渲染
-export default (WrapperComponent) => {
+export default function AAA(WrapperComponent) {
   return (props) => {
     return (
       <div style={{ height: 'calc(100vh - 80px)' }}>

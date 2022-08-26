@@ -1,7 +1,6 @@
 // react-router-dom中两种模式：BrowserRouter(History模式)  HashRouter(Hash模式)
 import { lazy, Suspense } from 'react'
-import { BrowserRouter, HashRouter, Routes, Route } from 'react-router-dom'
-
+import { BrowserRouter, HashRouter, Routes, Route, useLocation } from 'react-router-dom'
 
 // 按需导入组件
 const Error = lazy(() => import('../pages/Error'))
@@ -29,54 +28,58 @@ const UseCallbackCom = lazy(() => import('../pages/useCallback和useMemo和meno�
 const FullPageUse = lazy(() => import('../pages/fullpageJS使用/index'))
 const AhooksUse = lazy(() => import('../pages/Ahooks基本使用/index'))
 const HocWaterMarkCom = lazy(() => import('../pages/封装一个水印组件/index'))
+const CanvasWaterMarkCom = lazy(() => import('../pages/封装一个水印组件/canvas方式实现并使用MuationsObserver监听删除Dom/index'))
 
-const BaseRouter = () => (
-  <BrowserRouter>
-    <Suspense
-      fallback={
-        <div
-          style={{
-            textAlign: 'center',
-            marginTop: 200
-          }}
-        >
-          <h2>
-            LOADING.....
-          </h2>
-        </div>
-      }
-    >
-      {/*TODO: 组件首字母必须大写 */}
-      <Routes>
-        <Route path="/fullPageUse" element={<FullPageUse />}></Route>
-        <Route path="/" element={<Welcome />}>
-          <Route path="/home" element={<Home />}></Route>
-          <Route path="/list/:id" element={<List />}></Route>
-          <Route path="/detail" element={<Detail />}></Route>
-          <Route path="/myLife" element={<MyLife />}></Route>
-          <Route path="/customHook" element={<CustomHook />}></Route>
-          <Route path="/hooksUse" element={<HooksUse />}></Route>
-          <Route path="/reduxUse" element={<ReduxUse />}></Route>
-          <Route path="/asyncStateUse" element={<AsyncStateUse />}></Route>
-          <Route path="/refCom" element={<RefCom />}></Route>
-          <Route path="/fatherCom" element={<FatherCom />}></Route>
-          <Route path="/comContext" element={<ComContext />}></Route>
-          <Route path="/contextLeave" element={<ContextLeave />}></Route>
-          <Route path="/renderProps" element={<RenderProps />}></Route>
-          <Route path="/highOrderCom" element={<HighOrderCom />}></Route>
-          <Route path="/makeIdeas" element={<MakeIdeas />}></Route>
-          <Route path="/renderSvg" element={<RenderSvg />}></Route>
-          <Route path="/myTour" element={<MyTour />}></Route>
-          <Route path="/useReducerCom" element={<UseReducerCom />}></Route>
-          <Route path="/useCallbackCom" element={<UseCallbackCom />}></Route>
+const BaseRouter = () => {
+  return (
+    <BrowserRouter>
+      <Suspense
+        fallback={
+          <div
+            style={{
+              textAlign: 'center',
+              marginTop: 200
+            }}
+          >
+            <h2>
+              LOADING.....
+            </h2>
+          </div>
+        }
+      >
+        {/*TODO: 组件首字母必须大写 */}
+        <Routes>
           <Route path="/fullPageUse" element={<FullPageUse />}></Route>
-          <Route path="/ahooksUse" element={<AhooksUse />}></Route>
-          <Route path="/hocWaterMarkCom" element={<HocWaterMarkCom />}></Route>
-        </Route>
-        <Route path="*" element={<Error />}></Route>
-      </Routes>
-    </Suspense>
-  </BrowserRouter>
-)
+          <Route path="/" element={<Welcome />}>
+            <Route path="/home" element={<Home />}></Route>
+            <Route path="/list/:id" element={<List />}></Route>
+            <Route path="/detail" element={<Detail />}></Route>
+            <Route path="/myLife" element={<MyLife />}></Route>
+            <Route path="/customHook" element={<CustomHook />}></Route>
+            <Route path="/hooksUse" element={<HooksUse />}></Route>
+            <Route path="/reduxUse" element={<ReduxUse />}></Route>
+            <Route path="/asyncStateUse" element={<AsyncStateUse />}></Route>
+            <Route path="/refCom" element={<RefCom />}></Route>
+            <Route path="/fatherCom" element={<FatherCom />}></Route>
+            <Route path="/comContext" element={<ComContext />}></Route>
+            <Route path="/contextLeave" element={<ContextLeave />}></Route>
+            <Route path="/renderProps" element={<RenderProps />}></Route>
+            <Route path="/highOrderCom" element={<HighOrderCom />}></Route>
+            <Route path="/makeIdeas" element={<MakeIdeas />}></Route>
+            <Route path="/renderSvg" element={<RenderSvg />}></Route>
+            <Route path="/myTour" element={<MyTour />}></Route>
+            <Route path="/useReducerCom" element={<UseReducerCom />}></Route>
+            <Route path="/useCallbackCom" element={<UseCallbackCom />}></Route>
+            <Route path="/fullPageUse" element={<FullPageUse />}></Route>
+            <Route path="/ahooksUse" element={<AhooksUse />}></Route>
+            <Route path="/hocWaterMarkCom" element={<HocWaterMarkCom />}></Route>
+            <Route path="/canvasWaterMarkCom" element={<CanvasWaterMarkCom />}></Route>
+          </Route>
+          <Route path="*" element={<Error />}></Route>
+        </Routes>
+      </Suspense>
+    </BrowserRouter >
+  )
+}
 
 export default BaseRouter

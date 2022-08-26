@@ -29,7 +29,8 @@ const RouterList = [
   'useCallbackCom',
   'FullPageUse',
   'ahooksUse',
-  'hocWaterMarkCom'
+  'hocWaterMarkCom',
+  'canvasWaterMarkCom'
 ]
 
 // 路由为'/'的默认组件

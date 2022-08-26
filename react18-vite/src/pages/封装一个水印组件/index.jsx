@@ -8,9 +8,10 @@ const WaterMarkVideo = WithWaterMark(Video)
 
 export default () => {
   console.log('执行父组件---')
+  const status = { text: 'Lynk-Co', fontSize: '24', fillOpacity: '0.8', fillColor: '#71717A' }
   return (
     <>
-      <WaterMarkVideo className="!overflow-hidden"></WaterMarkVideo>
+      <WaterMarkVideo {...status} className="!overflow-hidden" />
     </>
   )
 }

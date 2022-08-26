@@ -11,7 +11,7 @@ function ChildCom(props) {
       {/*XXX 通过props.children拿到 父组件中 child组件下嵌套的内容 */}
       接收父组件传的参数：<h2 style={{ display: 'inline-block' }}>{props.name}--{props.age}--{props.children.props.hobby}</h2>
       <mark>通过props.children拿到 父组件中 child组件下嵌套的内容</mark>
-      <Button onClick={() => props.ddd('1', '2')}>子组件Child传参给父组件</Button>
+      <Button onClick={() => props.ddd('1', '2')} >子组件Child传参给父组件</Button>
     </>
   );
 }
