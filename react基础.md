@@ -64,6 +64,8 @@ jsx注意点
 	)
  7.组件中可以使用<></>空标签包裹(无法获取ref)、也可以用引入react的<Fragment></Fragment>包裹
  improt { Fragment } from 'react'
+
+jsx就是通过React.createElement()这个api生成dom、返回的是虚拟dom、通过ReactDOM.render渲染成真实dom
 ```
 
 ### React组件创建两种方式
@@ -79,7 +81,7 @@ jsx注意点
 function Hello() {
     return (<h1>我创建的第一个组件</h1>)
 }
-// 使用组件
+// 使用组件(将虚拟dom渲染成真实dom)
 ReactDOM.render(<Hello />, root)
 
 

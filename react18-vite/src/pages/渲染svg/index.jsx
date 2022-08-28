@@ -20,11 +20,11 @@ function RenderSvg() {
 
       <div className="flex justify-around">
         <Icon component={mySvg}></Icon>
-        <img src={PicSvg} alt="" style={{ width: '300px', userSelect: 'none', '-webkit-user-drag': 'none' }} />
-        <img src={WavesSvg} alt="" style={{ width: '300px', userSelect: 'none', '-webkit-user-drag': 'none' }} />
+        <img src={PicSvg} alt="" style={{ width: '300px', userSelect: 'none', 'WebkitUserDrag': 'none' }} />
+        <img src={WavesSvg} alt="" style={{ width: '300px', userSelect: 'none', 'WebkitUserDrag': 'none' }} />
       </div>
 
-      <img src={MoveWavesSvg} alt="" style={{ position: 'relative', bottom: 0, userSelect: 'none', '-webkit-user-drag': 'none' }} />
+      <img src={MoveWavesSvg} alt="" style={{ position: 'relative', bottom: 0, userSelect: 'none', 'WebkitUserDrag': 'none' }} />
 
     </>
   );
