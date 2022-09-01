@@ -29,6 +29,7 @@ const FullPageUse = lazy(() => import('../pages/fullpageJS使用/index'))
 const AhooksUse = lazy(() => import('../pages/Ahooks基本使用/index'))
 const HocWaterMarkCom = lazy(() => import('../pages/封装一个水印组件/index'))
 const CanvasWaterMarkCom = lazy(() => import('../pages/封装一个水印组件/canvas方式实现并使用MuationsObserver监听删除Dom/index'))
+const BangleIcon = lazy(() => import('../pages/实现角标/index'))
 
 const BaseRouter = () => {
   return (
@@ -74,11 +75,12 @@ const BaseRouter = () => {
             <Route path="/ahooksUse" element={<AhooksUse />}></Route>
             <Route path="/hocWaterMarkCom" element={<HocWaterMarkCom />}></Route>
             <Route path="/canvasWaterMarkCom" element={<CanvasWaterMarkCom />}></Route>
+            <Route path="/bangleIcon" element={<BangleIcon />}></Route>
           </Route>
           <Route path="*" element={<Error />}></Route>
         </Routes>
       </Suspense>
-    </BrowserRouter >
+    </BrowserRouter>
   )
 }
 

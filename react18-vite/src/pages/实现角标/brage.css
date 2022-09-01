@@ -1,0 +1,40 @@
+.brageDiv {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  border: 2px solid gray;
+  background: url('../../assets/logo192.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.brageDiv::after {
+  /*XXX 注意attr的用法 */
+  content: attr(data-count);
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  font-size: 22px;
+}
+
+.brageDiv[data-count='4'] {
+  background-image: url('https://markdownlivepreview.com/image/sample.png');
+  background-size: 100%;
+}
+
+[data-text] {
+  color: blue;
+  font-size: 22px;
+}
+
+[data-text]::before {
+  content: attr(data-text) ' ';
+  color: red;
+}

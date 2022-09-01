@@ -1,4 +1,26 @@
 /* 全局公共样式 */
+.App {
+  background-color: var(--surface1);
+  transition: 1s;
+}
+/* 白色主题 */
+.App[color-mode='light'] {
+  --surface1: #fff;
+  --surface2: #000000;
+  --surface3: #f0f0f0;
+}
+/* 黑色主题 */
+.App[color-mode='dark'] {
+  --surface1: #000000;
+  --surface2: #fff;
+  --surface3: #000000;
+}
+div,
+h1,
+h2,
+h3 {
+  color: var(--surface2);
+}
 h1 {
   font-size: 24px !important;
 }

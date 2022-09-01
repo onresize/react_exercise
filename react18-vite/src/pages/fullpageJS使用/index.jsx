@@ -26,7 +26,7 @@ const AnimationImg = () => {
     if (imgRef.current) {
       const style = imgRef.current.style
       let r = setTimeout(() => {
-        n += 0.25
+        n += 0.5
         style.opacity = n
         update()
         console.log(n);
@@ -44,7 +44,6 @@ const AnimationImg = () => {
       window.removeEventListener('resize', update)
     }
   }, [pic])
-
 
   return (
     <>
@@ -101,7 +100,7 @@ export default function FullPageJsCom() {
               <div className="section" style={{ overflow: 'hidden' }}>
                 {/* controls controlsList='nodownload' 去除控制条下载 */}
                 <h3 style={{ position: 'absolute', zIndex: 5, color: '#fff', left: 'calc(50% - 74px)', top: 'calc(50% - 12px)', zoom: 3, fontFamily: '楷体' }}>防溅抗水，治水逆。</h3>
-                <video style={{ position: 'absolute', zIndex: 2, width: '100%', height: '100%', boxSizing: 'border-box', objectFit: 'fill' }} autoPlay="autoPlay" loop muted={false} src="https://www.apple.com.cn/105/media/us/iphone-12/key-features/2021/c786182d-da7b-4296-a89c-389bba418d1d/anim/water/small.mp4"></video>
+                <video style={{ position: 'absolute', zIndex: 2, width: '100%', height: '100%', boxSizing: 'border-box', objectFit: 'fill' }} autoPlay="autoPlay" loop muted={true} src="https://www.apple.com.cn/105/media/us/iphone-12/key-features/2021/c786182d-da7b-4296-a89c-389bba418d1d/anim/water/small.mp4"></video>
               </div>
               <div className="section" style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <img src="https://alvarotrigo.com/fullPage/imgs/touch-responsive.jpg" alt="原" style={{ width: '300px', height: '300px' }} />
