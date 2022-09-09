@@ -14,7 +14,7 @@ const { Content, Sider } = Layout;
 const RouterList = [
   'home',
   'detail',
-  'list',
+  // 'list',
   'myLife',
   'customHook',
   'hooksUse',
@@ -117,7 +117,7 @@ function Welcome() {
   )
 
   const DarkSvg = () => (
-    <svg t="1662001915111" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2309" width="16" height="16"><path d="M593.054 120.217C483.656 148.739 402.91 248.212 402.91 366.546c0 140.582 113.962 254.544 254.544 254.544 118.334 0 217.808-80.746 246.328-190.144C909.17 457.12 912 484.23 912 512c0 220.914-179.086 400-400 400S112 732.914 112 512s179.086-400 400-400c27.77 0 54.88 2.83 81.054 8.217z" fill="#2c2c2c" fill-opacity=".65" p-id="2310"></path></svg>
+    <svg t="1662001915111" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2309" width="16" height="16"><path d="M593.054 120.217C483.656 148.739 402.91 248.212 402.91 366.546c0 140.582 113.962 254.544 254.544 254.544 118.334 0 217.808-80.746 246.328-190.144C909.17 457.12 912 484.23 912 512c0 220.914-179.086 400-400 400S112 732.914 112 512s179.086-400 400-400c27.77 0 54.88 2.83 81.054 8.217z" fill="#2c2c2c" fillOpacity=".65" p-id="2310"></path></svg>
   )
 
   const LightIcon = (props) => (
@@ -167,7 +167,7 @@ function Welcome() {
               )
             }
           </div>
-          <div style={{ position: 'absolute', bottom: '0', zIndex: 999, paddingLeft: '50px', width: '100%', height: '30px', lineHeight: '30px', boxSizing: 'border-box', color: 'var(--surface2)', backgroundColor: 'var(--surface1)', transition: '1s' }}>
+          <div style={{ position: 'absolute', bottom: '0', zIndex: 999, paddingLeft: '50px', width: '100%', height: '30px', lineHeight: '30px', boxSizing: 'border-box', color: 'var(--surface2)', backgroundColor: 'var(--surface1)', }}>
             主题切换:  <Switch
               onClick={() => setMode((e) => e == 'dark' ? 'light' : 'dark')}
               checkedChildren={<LightIcon style={{}} />}
@@ -192,7 +192,7 @@ function Welcome() {
               color-mode={mode}
               style={{
                 height: '100%',
-                borderColor: 'var(--surface3)'
+                borderColor: 'var(--surface3)',
               }}
               className={(pathname === '/hocWaterMarkCom') ? 'rounded-2xl bg-[#000000]' : 'App'}>
               {pathname === '/' && <InfoPage />}

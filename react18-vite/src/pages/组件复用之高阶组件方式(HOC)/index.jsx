@@ -11,8 +11,8 @@ export default function HighOrderCom(props) {
   return (
     <>
       <h2>组件复用之高阶组件方式实现共用组件、笑脸是共用的一个组件</h2>
-      <MousePro1></MousePro1>
-      <MousePro></MousePro>
+      <MousePro1>123</MousePro1>
+      <MousePro>456</MousePro>
     </>
   )
 }

@@ -22,8 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 // 这里3秒替换节点、模拟App2.jsx中HOOK的useEffect触发回调函数、模拟vue销毁前的钩子
 // setTimeout(() => {
-//   ReactDOM.render(
-//     <h2>3秒后走了销毁</h2>,
-//     document.getElementById('root')
+//   ReactDOM.createRoot(document.getElementById('root')).render(
+//     <h2>3秒后走了销毁</h2>
 //   )
 // }, 3000)

@@ -1,10 +1,11 @@
-import React, { Fragment, useRef, useState } from 'react';
+import React, { Fragment, useRef, useState, useContext, createContext } from 'react';
 import './brage.css'
 
 export default () => {
-
   const RefCount = useRef()
   const [num, setNum] = useState(0)
+  const aaa = useContext(createContext({ a: 1, b: 2 }))
+  console.log('aaa', aaa)
 
   const updateCount = () => {
     setNum((e) => e + 1)

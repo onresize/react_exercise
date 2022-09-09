@@ -6,7 +6,7 @@ const SvgTextBg = (props) => {
   const { text = '殷志伟牛逼', fontSize = 16, fillOpacity = '0.4', fillColor = 'grey' } = props
   const res = `
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="180px" height="180px" viewBox="0 0 180 180">
-        <text x="-100" y="-30" fill='${fillColor}'  transform = "rotate(-35 220 -220)" fill-opacity='${fillOpacity}' font-size='${fontSize}'> ${text}</text>
+        <text x="-100" y="-30" fill='${fillColor}'  transform = "rotate(-35 220 -220)" fillOpacity='${fillOpacity}' font-size='${fontSize}'> ${text}</text>
       </svg>`
 
   const blob = new Blob([res], { type: 'image/svg+xml', })

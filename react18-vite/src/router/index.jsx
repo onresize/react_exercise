@@ -31,55 +31,56 @@ const HocWaterMarkCom = lazy(() => import('../pages/封装一个水印组件/ind
 const CanvasWaterMarkCom = lazy(() => import('../pages/封装一个水印组件/canvas方式实现并使用MuationsObserver监听删除Dom/index'))
 const BangleIcon = lazy(() => import('../pages/实现角标/index'))
 
+// 解决路由切换闪屏
+const lazyLoad = (children) => {
+  return <Suspense fallback={<div
+    style={{
+      textAlign: 'center',
+      marginTop: 200
+    }}
+  >
+    <h2>
+      LOADING.....
+    </h2>
+  </div>}>
+    {children}
+  </Suspense>
+}
+
 const BaseRouter = () => {
   return (
     <BrowserRouter>
-      <Suspense
-        fallback={
-          <div
-            style={{
-              textAlign: 'center',
-              marginTop: 200
-            }}
-          >
-            <h2>
-              LOADING.....
-            </h2>
-          </div>
-        }
-      >
-        {/*TODO: 组件首字母必须大写 */}
-        <Routes>
-          <Route path="/fullPageUse" element={<FullPageUse />}></Route>
-          <Route path="/" element={<Welcome />}>
-            <Route path="/home" element={<Home />}></Route>
-            <Route path="/list/:id" element={<List />}></Route>
-            <Route path="/detail" element={<Detail />}></Route>
-            <Route path="/myLife" element={<MyLife />}></Route>
-            <Route path="/customHook" element={<CustomHook />}></Route>
-            <Route path="/hooksUse" element={<HooksUse />}></Route>
-            <Route path="/reduxUse" element={<ReduxUse />}></Route>
-            <Route path="/asyncStateUse" element={<AsyncStateUse />}></Route>
-            <Route path="/refCom" element={<RefCom />}></Route>
-            <Route path="/fatherCom" element={<FatherCom />}></Route>
-            <Route path="/comContext" element={<ComContext />}></Route>
-            <Route path="/contextLeave" element={<ContextLeave />}></Route>
-            <Route path="/renderProps" element={<RenderProps />}></Route>
-            <Route path="/highOrderCom" element={<HighOrderCom />}></Route>
-            <Route path="/makeIdeas" element={<MakeIdeas />}></Route>
-            <Route path="/renderSvg" element={<RenderSvg />}></Route>
-            <Route path="/myTour" element={<MyTour />}></Route>
-            <Route path="/useReducerCom" element={<UseReducerCom />}></Route>
-            <Route path="/useCallbackCom" element={<UseCallbackCom />}></Route>
-            <Route path="/fullPageUse" element={<FullPageUse />}></Route>
-            <Route path="/ahooksUse" element={<AhooksUse />}></Route>
-            <Route path="/hocWaterMarkCom" element={<HocWaterMarkCom />}></Route>
-            <Route path="/canvasWaterMarkCom" element={<CanvasWaterMarkCom />}></Route>
-            <Route path="/bangleIcon" element={<BangleIcon />}></Route>
-          </Route>
-          <Route path="*" element={<Error />}></Route>
-        </Routes>
-      </Suspense>
+      {/*TODO: 组件首字母必须大写 */}
+      <Routes>
+        <Route path="/fullPageUse" element={lazyLoad(<FullPageUse />)}></Route>
+        <Route path="/" element={lazyLoad(<Welcome />)}>
+          <Route path="/home" element={lazyLoad(<Home />)}></Route>
+          <Route path="/list/:id" element={lazyLoad(<List />)}></Route>
+          <Route path="/detail" element={lazyLoad(<Detail />)}></Route>
+          <Route path="/myLife" element={lazyLoad(<MyLife />)}></Route>
+          <Route path="/customHook" element={lazyLoad(<CustomHook />)}></Route>
+          <Route path="/hooksUse" element={lazyLoad(<HooksUse />)}></Route>
+          <Route path="/reduxUse" element={lazyLoad(<ReduxUse />)}></Route>
+          <Route path="/asyncStateUse" element={lazyLoad(<AsyncStateUse />)}></Route>
+          <Route path="/refCom" element={lazyLoad(<RefCom />)}></Route>
+          <Route path="/fatherCom" element={lazyLoad(<FatherCom />)}></Route>
+          <Route path="/comContext" element={lazyLoad(<ComContext />)}></Route>
+          <Route path="/contextLeave" element={lazyLoad(<ContextLeave />)}></Route>
+          <Route path="/renderProps" element={lazyLoad(<RenderProps />)}></Route>
+          <Route path="/highOrderCom" element={lazyLoad(<HighOrderCom />)}></Route>
+          <Route path="/makeIdeas" element={lazyLoad(<MakeIdeas />)}></Route>
+          <Route path="/renderSvg" element={lazyLoad(<RenderSvg />)}></Route>
+          <Route path="/myTour" element={lazyLoad(<MyTour />)}></Route>
+          <Route path="/useReducerCom" element={lazyLoad(<UseReducerCom />)}></Route>
+          <Route path="/useCallbackCom" element={lazyLoad(<UseCallbackCom />)}></Route>
+          <Route path="/fullPageUse" element={lazyLoad(<FullPageUse />)}></Route>
+          <Route path="/ahooksUse" element={lazyLoad(<AhooksUse />)}></Route>
+          <Route path="/hocWaterMarkCom" element={lazyLoad(<HocWaterMarkCom />)}></Route>
+          <Route path="/canvasWaterMarkCom" element={lazyLoad(<CanvasWaterMarkCom />)}></Route>
+          <Route path="/bangleIcon" element={lazyLoad(<BangleIcon />)}></Route>
+        </Route>
+        <Route path="*" element={lazyLoad(<Error />)}></Route>
+      </Routes>
     </BrowserRouter>
   )
 }
