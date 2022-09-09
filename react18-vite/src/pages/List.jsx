@@ -5,7 +5,7 @@ export default function List() {
   const { id } = useParams()
   return (
     <>
-      <h2>列表页拿到传来的id：{id}</h2>
+      <h2>列表页拿到传来的随机id：{id}</h2>
     </>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { ConfigProvider } from 'antd';
 import Router from './router'
 import { Provider } from 'react-redux'
 import store from './store'
@@ -9,6 +10,9 @@ import 'antd/dist/antd.css';
 import './index.css'
 import 'virtual:windi.css'
 
+// antd国际化
+import zhCN from 'antd/es/locale/zh_CN';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <Provider store={store}>
   //   <App />
@@ -16,7 +20,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
   // redux提供器
   <Provider store={store}>
-    <Router />
+    <ConfigProvider locale={zhCN}>
+      <Router />
+    </ConfigProvider>
   </Provider>
 )
 

@@ -1,12 +1,13 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useSearchParams } from 'react-router-dom'
 import { Button } from 'antd'
 
 export default function Home() {
   const local = useLocation()
+  const [obj] = useSearchParams()
   // console.log(local);
-  const getAll = (e) => {
-    console.log('---------------------', e);
+  const getAll = (e, f) => {
+    console.log('---------------------', e, f);
   }
   return (
     <>
@@ -14,7 +15,7 @@ export default function Home() {
       {/* 1.方法一 */}
       <Button onClick={() => getAll('123')}>函数式组件触发方法一</Button>
       {/* 2.方法二 */}
-      <Button onClick={getAll.bind(this, '12311')}>函数式组件触发方法二</Button>
+      <Button onClick={getAll.bind(this, '2222', '3333')}>函数式组件触发方法二</Button>
     </>
   )
 }

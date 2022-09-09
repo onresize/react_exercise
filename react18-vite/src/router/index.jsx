@@ -1,12 +1,16 @@
 // react-router-dom中两种模式：BrowserRouter(History模式)  HashRouter(Hash模式)
-import { lazy, Suspense } from 'react'
-import { BrowserRouter, HashRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { lazy, Suspense, useState, useEffect } from 'react'
+import { BrowserRouter, HashRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
+
+// 控制路由访问权限
+import Access from './Access'
 
 // 按需导入组件
 const Error = lazy(() => import('../pages/Error'))
-const App = lazy(() => import('../compontes/App7'))
+const Login = lazy(() => import('../pages/Login'))
 const Welcome = lazy(() => import('../Welcome'))
 const Home = lazy(() => import('../pages/Home'))
+const RouterParams = lazy(() => import('../pages/路由参数的获取/index'))
 const Detail = lazy(() => import('../pages/Detail'))
 const List = lazy(() => import('../pages/List'))
 const MyLife = lazy(() => import('../pages/MyLife'))
@@ -47,42 +51,81 @@ const lazyLoad = (children) => {
   </Suspense>
 }
 
-const BaseRouter = () => {
+
+const RouterList = () => {
+  const navigateTo = useNavigate()
+  const { pathname } = useLocation()
+  // 控制路由访问权限、应用场景：当没有登入的情况、canAccess为false、只允许访问login页面
+  const [canAccess, setAccess] = useState(false)
+  //XXX 模仿vue的路由全局钩子（前置、后置）
+  useEffect(() => {
+    console.log('进入路由：', pathname);
+    return () => {
+      console.log('离开路由：', pathname)
+    }
+  }, [canAccess, pathname])
+
+  // 封装一个统一方法
+  const publicElement = (canAccess, childrenCom) => {
+    return (
+      // 控制页面访问权限
+      <Access {...{ canAccess, children: lazyLoad(childrenCom) }} />
+    )
+  }
+
+  useEffect(() => {
+    console.log('拿到localStorage:', JSON.parse(window.localStorage.getItem('login')))
+    let loginForm = JSON.parse(window.localStorage.getItem('login'))
+    // 登入成功将允许所有页面能够访问、否则重定向login页
+    if (loginForm?.password == 123 && loginForm?.username == 'admin') {
+      setAccess(true)
+    } else {
+      navigateTo('/login')
+    }
+  }, [])
+
   return (
-    <BrowserRouter>
-      {/*TODO: 组件首字母必须大写 */}
-      <Routes>
-        <Route path="/fullPageUse" element={lazyLoad(<FullPageUse />)}></Route>
-        <Route path="/" element={lazyLoad(<Welcome />)}>
-          <Route path="/home" element={lazyLoad(<Home />)}></Route>
-          <Route path="/list/:id" element={lazyLoad(<List />)}></Route>
-          <Route path="/detail" element={lazyLoad(<Detail />)}></Route>
-          <Route path="/myLife" element={lazyLoad(<MyLife />)}></Route>
-          <Route path="/customHook" element={lazyLoad(<CustomHook />)}></Route>
-          <Route path="/hooksUse" element={lazyLoad(<HooksUse />)}></Route>
-          <Route path="/reduxUse" element={lazyLoad(<ReduxUse />)}></Route>
-          <Route path="/asyncStateUse" element={lazyLoad(<AsyncStateUse />)}></Route>
-          <Route path="/refCom" element={lazyLoad(<RefCom />)}></Route>
-          <Route path="/fatherCom" element={lazyLoad(<FatherCom />)}></Route>
-          <Route path="/comContext" element={lazyLoad(<ComContext />)}></Route>
-          <Route path="/contextLeave" element={lazyLoad(<ContextLeave />)}></Route>
-          <Route path="/renderProps" element={lazyLoad(<RenderProps />)}></Route>
-          <Route path="/highOrderCom" element={lazyLoad(<HighOrderCom />)}></Route>
-          <Route path="/makeIdeas" element={lazyLoad(<MakeIdeas />)}></Route>
-          <Route path="/renderSvg" element={lazyLoad(<RenderSvg />)}></Route>
-          <Route path="/myTour" element={lazyLoad(<MyTour />)}></Route>
-          <Route path="/useReducerCom" element={lazyLoad(<UseReducerCom />)}></Route>
-          <Route path="/useCallbackCom" element={lazyLoad(<UseCallbackCom />)}></Route>
-          <Route path="/fullPageUse" element={lazyLoad(<FullPageUse />)}></Route>
-          <Route path="/ahooksUse" element={lazyLoad(<AhooksUse />)}></Route>
-          <Route path="/hocWaterMarkCom" element={lazyLoad(<HocWaterMarkCom />)}></Route>
-          <Route path="/canvasWaterMarkCom" element={lazyLoad(<CanvasWaterMarkCom />)}></Route>
-          <Route path="/bangleIcon" element={lazyLoad(<BangleIcon />)}></Route>
-        </Route>
-        <Route path="*" element={lazyLoad(<Error />)}></Route>
-      </Routes>
-    </BrowserRouter>
+    // TODO: 组件首字母必须大写 
+    <Routes>
+      <Route path="/" element={lazyLoad(<Welcome />)}>
+        <Route path="/routerParams" element={publicElement(canAccess, <RouterParams />)}></Route>
+        <Route path="/home" element={publicElement(canAccess, <Home />)}></Route>
+        <Route path="/list/:id" element={publicElement(canAccess, <List />)}></Route>
+        <Route path="/detail" element={publicElement(canAccess, <Detail />)}></Route>
+        <Route path="/myLife" element={publicElement(canAccess, <MyLife />)}></Route>
+        <Route path="/customHook" element={publicElement(canAccess, <CustomHook />)}></Route>
+        <Route path="/hooksUse" element={publicElement(canAccess, <HooksUse />)}></Route>
+        <Route path="/reduxUse" element={publicElement(canAccess, <ReduxUse />)}></Route>
+        <Route path="/asyncStateUse" element={publicElement(canAccess, <AsyncStateUse />)}></Route>
+        <Route path="/refCom" element={publicElement(canAccess, <RefCom />)}></Route>
+        <Route path="/fatherCom" element={publicElement(canAccess, <FatherCom />)}></Route>
+        <Route path="/comContext" element={publicElement(canAccess, <ComContext />)}></Route>
+        <Route path="/contextLeave" element={publicElement(canAccess, <ContextLeave />)}></Route>
+        <Route path="/renderProps" element={publicElement(canAccess, <RenderProps />)}></Route>
+        <Route path="/highOrderCom" element={publicElement(canAccess, <HighOrderCom />)}></Route>
+        <Route path="/makeIdeas" element={publicElement(canAccess, <MakeIdeas />)}></Route>
+        <Route path="/renderSvg" element={publicElement(canAccess, <RenderSvg />)}></Route>
+        <Route path="/myTour" element={publicElement(canAccess, <MyTour />)}></Route>
+        <Route path="/useReducerCom" element={publicElement(canAccess, <UseReducerCom />)}></Route>
+        <Route path="/useCallbackCom" element={publicElement(canAccess, <UseCallbackCom />)}></Route>
+        <Route path="/fullPageUse" element={publicElement(canAccess, <FullPageUse />)}></Route>
+        <Route path="/ahooksUse" element={publicElement(canAccess, <AhooksUse />)}></Route>
+        <Route path="/hocWaterMarkCom" element={publicElement(canAccess, <HocWaterMarkCom />)}></Route>
+        <Route path="/canvasWaterMarkCom" element={publicElement(canAccess, <CanvasWaterMarkCom />)}></Route>
+        <Route path="/bangleIcon" element={publicElement(canAccess, <BangleIcon />)}></Route>
+      </Route>
+      <Route path="*" element={lazyLoad(<Error />)}></Route>
+      <Route path="/fullPageUse" element={publicElement(canAccess, <FullPageUse />)}></Route>
+      <Route path="/login" element={lazyLoad(<Login />)}></Route>
+    </Routes>
   )
 }
 
-export default BaseRouter
+
+export default () => {
+  return (
+    <BrowserRouter>
+      <RouterList />
+    </BrowserRouter >
+  )
+}
