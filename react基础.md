@@ -142,7 +142,7 @@ class AAA extends React.Component {
 
 ![image-20220123223928681](https://img-blog.csdnimg.cn/087da0149321454793d3cb042df75632.png)
 
-### 组件中的 state 和 setState
+### 类组件中的 state 和 setState
 
 ```jsx
 class Hello extends React.Component {
@@ -181,6 +181,8 @@ Context解决组件多层嵌套之间的通信
 
 ### 类组件中生命周期
 
+> （componentDidMount、componentDidUpdate、componentWillUnmount）
+
 ![](https://img-blog.csdnimg.cn/75e6c4bf990f4349a6b20faeeae80f20.jpeg)
 
 路由 v6 和 v5 占位符分别写法
@@ -204,6 +206,26 @@ Context解决组件多层嵌套之间的通信
 </Switch>
 ```
 
+### 路由跳转
+
+```js
+// 方式1、参考： https://blog.csdn.net/qq_53120043/article/details/126358758
+import { createBrowserHistory } from 'history'
+
+const History  = createBrowserHistory()
+History.push('/')
+window.location.reload()
+
+
+// 方式2、useNavigate
+import { useNavigate } from  'react-router-dom'
+const navigateTo =  useNavigate()
+navigateTo('/', {a: 1, b:  2})
+
+// 方式3、Link
+<Link to='/list/123'>列表传id</Link>
+```
+
 ```js
 // React v17类组件生命周期
 https://zhuanlan.zhihu.com/p/370198189
@@ -222,10 +244,10 @@ useEffect(() => {}, []) // 模拟mounted、componentDidMount
 useEffect(() => {}) // 每次更新都会执行这个回调
 
 useEffect(() => {
-    reeturn () => {
+    return () => {
         // 模拟beforeDestory、componentWillUnmount
     }
-})
+},  [])
 
 useEffect(() => {
     console.log('当num变化就会触发这个回调') // 模拟updated、componentDidUpdate

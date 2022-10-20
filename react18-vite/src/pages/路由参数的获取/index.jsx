@@ -29,7 +29,7 @@ export default function App7() {
         <br />
         <Button onClick={() => navigateTo(`/list/${randomId}`)}>动态路由：跳转列表传随机id</Button>
         <br />
-        <Button onClick={() => navigateTo('/detail?name=王杰&id=13')}>跳转详情</Button>
+        <Button onClick={() => navigateTo('/detail?name=王杰&id=1799')}>跳转详情</Button>
         {/*  react的路由占位符、显示子路由 */}
         <Outlet />
       </h2>

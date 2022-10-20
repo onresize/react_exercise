@@ -27,6 +27,7 @@ const RouterList = [
   'contextLeave',
   'renderProps',
   'highOrderCom',
+  'hookComRender',
   'makeIdeas',
   'renderSvg',
   'myTour',
@@ -37,6 +38,7 @@ const RouterList = [
   'hocWaterMarkCom',
   'canvasWaterMarkCom',
   'bangleIcon',
+  'immerJs',
 ]
 
 // 路由为'/'的默认组件

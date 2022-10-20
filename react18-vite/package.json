@@ -23,6 +23,7 @@
     "@vitejs/plugin-react": "^2.0.1",
     "ahooks": "^3.7.0",
     "antd": "^4.22.7",
+    "immer": "^9.0.15",
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

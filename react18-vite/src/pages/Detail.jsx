@@ -1,8 +1,10 @@
 import React from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useSearchParams, useLocation } from 'react-router-dom'
 
 export default function Detail() {
+  // const location = useLocation()
   const [bba] = useSearchParams()
+  // console.log('location:', location)
   const id = bba.getAll('id')
   const name = bba.getAll('name')
   //XXX 这里也可以使用get('id')、get('name')获取路由传参、getAll是当路由有重复的参数名时、会返回参数值的数组

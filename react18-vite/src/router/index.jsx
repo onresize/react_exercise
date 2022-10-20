@@ -24,6 +24,7 @@ const ComContext = lazy(() => import('../pages/组件通信createContext和useCo
 const ContextLeave = lazy(() => import('../pages/组件通信createContext和useContext/context抽离组件的使用/index'))
 const RenderProps = lazy(() => import('../pages/组件复用render-props/index'))
 const HighOrderCom = lazy(() => import('../pages/组件复用之高阶组件方式(HOC)/index'))
+const HookComRender = lazy(() => import('../pages/组件复用Hook方案/index'))
 const MakeIdeas = lazy(() => import('../pages/奇思妙想/index'))
 const RenderSvg = lazy(() => import('../pages/渲染svg/index'))
 const MyTour = lazy(() => import('../pages/步骤引导组件测试/index'))
@@ -34,6 +35,7 @@ const AhooksUse = lazy(() => import('../pages/Ahooks基本使用/index'))
 const HocWaterMarkCom = lazy(() => import('../pages/封装一个水印组件/index'))
 const CanvasWaterMarkCom = lazy(() => import('../pages/封装一个水印组件/canvas方式实现并使用MuationsObserver监听删除Dom/index'))
 const BangleIcon = lazy(() => import('../pages/实现角标/index'))
+const ImmerJs = lazy(() => import('../pages/immerJs使用/index'))
 
 // 解决路由切换闪屏
 const lazyLoad = (children) => {
@@ -103,6 +105,7 @@ const RouterList = () => {
         <Route path="/contextLeave" element={publicElement(canAccess, <ContextLeave />)}></Route>
         <Route path="/renderProps" element={publicElement(canAccess, <RenderProps />)}></Route>
         <Route path="/highOrderCom" element={publicElement(canAccess, <HighOrderCom />)}></Route>
+        <Route path="/hookComRender" element={publicElement(canAccess, <HookComRender />)}></Route>
         <Route path="/makeIdeas" element={publicElement(canAccess, <MakeIdeas />)}></Route>
         <Route path="/renderSvg" element={publicElement(canAccess, <RenderSvg />)}></Route>
         <Route path="/myTour" element={publicElement(canAccess, <MyTour />)}></Route>
@@ -113,6 +116,7 @@ const RouterList = () => {
         <Route path="/hocWaterMarkCom" element={publicElement(canAccess, <HocWaterMarkCom />)}></Route>
         <Route path="/canvasWaterMarkCom" element={publicElement(canAccess, <CanvasWaterMarkCom />)}></Route>
         <Route path="/bangleIcon" element={publicElement(canAccess, <BangleIcon />)}></Route>
+        <Route path="/immerJs" element={publicElement(canAccess, <ImmerJs />)}></Route>
       </Route>
       <Route path="*" element={lazyLoad(<Error />)}></Route>
       <Route path="/fullPageUse" element={publicElement(canAccess, <FullPageUse />)}></Route>
