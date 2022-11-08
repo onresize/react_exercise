@@ -111,7 +111,6 @@ const RouterList = () => {
         <Route path="/myTour" element={publicElement(canAccess, <MyTour />)}></Route>
         <Route path="/useReducerCom" element={publicElement(canAccess, <UseReducerCom />)}></Route>
         <Route path="/useCallbackCom" element={publicElement(canAccess, <UseCallbackCom />)}></Route>
-        <Route path="/fullPageUse" element={publicElement(canAccess, <FullPageUse />)}></Route>
         <Route path="/ahooksUse" element={publicElement(canAccess, <AhooksUse />)}></Route>
         <Route path="/hocWaterMarkCom" element={publicElement(canAccess, <HocWaterMarkCom />)}></Route>
         <Route path="/canvasWaterMarkCom" element={publicElement(canAccess, <CanvasWaterMarkCom />)}></Route>
@@ -129,7 +128,7 @@ const RouterList = () => {
 export default () => {
   return (
     <BrowserRouter>
-      <RouterList />
+      <RouterList /> 
     </BrowserRouter >
   )
 }

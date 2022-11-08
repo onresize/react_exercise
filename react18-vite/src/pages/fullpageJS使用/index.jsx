@@ -92,7 +92,7 @@ export default function FullPageJsCom() {
                 </div>
               </div>
               <div className="section">
-                <img src="https://www.apple.com.cn/v/iphone-13/h/images/key-features/features-modal/a15_expanded__emu22jraq9ea_large.jpg" alt="原" style={{ height: '60%' }} />
+                <img src="https://www.apple.com.cn/v/iphone-13/h/images/key-features/features-modal/a15_expanded__emu22jraq9ea_large.jpg" alt="原" style={{ height: '60%', width: '40%'}} />
               </div>
               <div className="section" style={{ overflow: 'hidden' }}>
                 <img src="https://www.apple.com.cn/v/iphone-13/h/images/key-features/features-modal/ip68_expanded__ebui4q5cys02_large.jpg" alt="原" style={{ height: '100%', width: '100%', boxSizing: 'border-box' }} />
