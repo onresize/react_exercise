@@ -1736,9 +1736,15 @@ use-sync-external-store@^1.0.0:
   integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
 
 viewerjs@^1.0.0:
+<<<<<<< HEAD
   version "1.11.3"
   resolved "https://registry.npmmirror.com/viewerjs/-/viewerjs-1.11.3.tgz#6569c519590776190f86b531bf43a5888a7a472f"
   integrity sha512-efG3U61Umuj/1x6JAtdvnY9m407C/RkrkFilsMcLEWKDivpjNU3/FeL+feCY1Vkur9aQeBJ+z6K4CCPP7hv6vA==
+=======
+  version "1.11.0"
+  resolved "https://registry.npmmirror.com/viewerjs/-/viewerjs-1.11.0.tgz#eda25d96998356b4576fe25ef8d7cd6fd795a374"
+  integrity sha512-TE3XvfEXqKV+LdHsRdMSPsCaq0PfKDXm4SjGzfty7CzVxlDbBbT4x38vAqfXfNITmHhHUQefdxdg0Vv4ia+Z9w==
+>>>>>>> 6ade7da443c565be000e280065c41f083da0f74c
 
 vite-plugin-windicss@^1.8.4:
   version "1.8.7"
