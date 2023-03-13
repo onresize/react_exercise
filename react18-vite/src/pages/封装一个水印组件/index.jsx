@@ -11,7 +11,7 @@ export default () => {
   const status = { text: 'Lynk-Co', fontSize: '24', fillOpacity: '0.8', fillColor: '#71717A' }
   return (
     <>
-      <WaterMarkVideo {...status} className="!overflow-hidden" />
+      <WaterMarkVideo {...status}/>
     </>
   )
 }

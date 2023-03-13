@@ -22,8 +22,8 @@ const SvgTextBg = (props) => {
           left: '50%',
           transform: 'translate(-50%, -50%)',
           zIndex: 99,
-          width: '1840px',
-          height: '920px',
+          width: 'calc(100vw - 440px)',
+          height: '80%',
           pointerEvents: 'none', // 点击穿透
           background: `url(${url})`,
         }}
@@ -40,7 +40,7 @@ export default function AAA(WrapperComponent) {
     return (
       <div style={{ height: 'calc(100vh - 80px)' }}>
         <WrapperComponent />
-        <SvgTextBg {...props}></SvgTextBg>
+        <SvgTextBg {...props} style={{ overflow: 'hidden' }}></SvgTextBg>
       </div>
     )
   }
