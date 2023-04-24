@@ -3,7 +3,7 @@ import CanvasWaterMark from './canvasWaterMark'
 //防止水印删除参考 https://www.jianshu.com/p/eaccb1ea73f9
 export default () => {
   const style = {
-    width: 'calc(100vw - 390px)', height: 'calc(100vh - 80px)'
+    width: 'calc(100vw - 300px)', height: 'calc(100vh - 80px)'
   }
   return (
     <>
